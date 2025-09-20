@@ -1,0 +1,144 @@
+.projects-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: var(--mb-2);
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background: transparent;
+    border: none;
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.filter-btn.active, 
+.filter-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.projects-grid {
+    display: flex;
+  gap: 2rem;
+  overflow-x: auto;   /* يخلي في سكرول أفقي */
+  scroll-behavior: smooth; /* سكرول ناعم */
+  padding-bottom: 1rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    flex: 0 0 300px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-title {
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-0-5);
+    color: var(--dark-color);
+}
+
+.project-description {
+    color: var(--gray-color);
+    margin-bottom: var(--mb-1);
+    line-height: 1.6;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: var(--mb-1);
+}
+
+.project-tag {
+    padding: 4px 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: var(--gray-color);
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-link {
+    color: var(--primary-color);
+    font-weight: var(--font-medium);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.project-link:hover {
+    color: var(--primary-dark);
+}
+
+
+/* Dark Mode for Projects Section */
+.dark-about {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+.dark-about .project-card {
+    background-color: #1e293b; /* نفس لون الداكن */
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.dark-about .project-tag {
+    background-color: rgba(255, 255, 255, 0.1); /* خلفية فاتحة قليلاً */
+    color: var(--light-color); /* نص واضح */
+}
+
+.dark-about .project-title,
+.dark-about .project-description,
+.dark-about .project-tag,
+.dark-about .project-link {
+    color: var(--light-color);
+}
+
+.dark-about .project-link:hover {
+    color: var(--secondary-color);
+}
+
+.dark-about .projects-filters .filter-btn {
+    color: var(--light-color); /* عشان يبان النص */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* لو عايز إطار بسيط */
+}
+
+.dark-about .projects-filters .filter-btn.active,
+.dark-about .projects-filters .filter-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}

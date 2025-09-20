@@ -1,0 +1,52 @@
+:root {
+    /* Colors - Light Mode */
+    --primary-color: #3a86ff;
+    --primary-dark: #2563eb;
+    --secondary-color: #f72585;
+    --dark-color: #1e293b;
+    --light-color: #f8fafc;
+    --gray-color: #64748b;
+    --success-color: #10b981;
+
+    --background-color: var(--light-color);
+    --text-color: var(--dark-color);
+    --card-color: #ffffff;
+
+    /* Layout */
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+
+    /* Typography */
+    --body-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --big-font-size: 3.5rem;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 2rem;
+    --h3-font-size: 1.5rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+
+    /* Font Weights */
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+
+    /* Spacing */
+    --mb-0-5: 0.5rem;
+    --mb-0-75: 0.75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+}
+
+
+@media screen and (max-width: 992px) {
+    :root {
+        --big-font-size: 2.5rem;
+        --h1-font-size: 2rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+    }
+}

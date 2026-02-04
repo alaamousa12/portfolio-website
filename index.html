@@ -4,434 +4,475 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Alaa Ali | Flutter Developer</title>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="stylesheet" href="css/utilities/reset.css">
-        <link rel="stylesheet" href="css/utilities/variables.css">
-        <link rel="stylesheet" href="css/utilities/animations.css">
-        <link rel="stylesheet" href="css/components/header.css">
-        <link rel="stylesheet" href="css/components/hero.css">
-        <link rel="stylesheet" href="css/components/about.css">
-        <link rel="stylesheet" href="css/components/skills.css">
-        <link rel="stylesheet" href="css/components/projects.css">
-        <link rel="stylesheet" href="css/components/certificates.css">
-        <link rel="stylesheet" href="css/components/contact.css">
-        <link rel="stylesheet" href="css/components/footer.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
 
-        <!-- Header (ضعه مباشرة بعد فتح <body> أو قبل section.hero) -->
-        <header>
-            <div class="nav-container">
-                <a href="#home" class="logo">Alaa Ali</a>
+        <header id="header">
+            <div class="container nav-container">
+                <a href="#home" class="logo">Alaa<span>.Dev</span></a>
 
-                <ul id="nav-menu" class="nav-menu" role="menubar">
-                    <li role="none"><a role="menuitem" href="#home"
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home"
                             class="nav-link active-link">Home</a></li>
-                    <li role="none"><a role="menuitem" href="#about"
-                            class="nav-link">About</a></li>
-                    <li role="none"><a role="menuitem" href="#skills"
-                            class="nav-link">Skills</a></li>
-                    <li role="none"><a role="menuitem" href="#projects"
-                            class="nav-link">Projects</a></li>
-                    <li role="none"><a role="menuitem" href="#certificates"
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#certificates"
                             class="nav-link">Certificates</a></li>
-                    <li role="none"><a role="menuitem" href="#contact"
-                            class="nav-link">Contact</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
 
-                <button id="hamburger" class="hamburger"
-                    aria-label="Toggle menu" aria-expanded="false">
-                    <i class="fas fa-bars" aria-hidden="true"></i>
-                </button>
-
-                <!-- Dark Mode Toggle for About Section -->
-                <button id="dark-mode-btn" class="dark-mode-btn"
-                    aria-label="Toggle About Dark Mode">
-                    <i class="fas fa-moon"></i>
-                </button>
-
+                <div class="nav-actions">
+                    <button id="dark-mode-btn" class="theme-btn"
+                        aria-label="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="hamburger" id="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
             </div>
-
         </header>
 
-        <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="container hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">Hi, I'm Alaa Ali</h1>
-                    <h2 class="hero-subtitle">Mobile App Developer |
-                        Flutter</h2>
-                    <p class="hero-description">I specialize in building modern,
-                        high-performance mobile applications using Flutter.
-                        My focus is on delivering cross-platform apps with clean
-                        code, smooth user experience,
-                        and scalable design that work seamlessly on both iOS and
-                        Android.</p>
+                <div class="hero-text reveal-left">
+                    <span class="badge">👋 Hello, I'm</span>
+                    <h1 class="hero-title">Alaa Ali</h1>
+                    <h2 class="hero-subtitle">I am a <span
+                            class="typing-text"></span></h2>
+                    <p class="hero-desc">
+                        Professional Flutter Developer transforming ideas into
+                        high-performance,
+                        cross-platform mobile applications for Android & iOS.
+                    </p>
                     <div class="hero-btns">
-                        <a href="#projects" class="btn">View My Work</a>
+                        <a href="#projects" class="btn btn-primary">View My Work
+                            <i class="fas fa-arrow-right"></i></a>
                         <a href="#contact" class="btn btn-outline">Contact
                             Me</a>
-                        <!-- <a href="files/Alaa_CV.pdf" class="btn" target="_blank">Download CV</a> -->
                     </div>
-                    <div class="hero-social">
+                    <div class="social-links">
+                        <a href="http://www.linkedin.com/in/alaa-ali-8a7348228"
+                            rel="noopener noreferrer"
+                            target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/alaamousa12"
+                            rel="noopener noreferrer"
+                            target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://www.facebook.com/share/17ch424929/"
-                            class="social-link" target="_blank"
-                            rel="noopener noreferrer"><i
+                            rel="noopener noreferrer"
+                            target="_blank"><i
                                 class="fab fa-facebook-f"></i></a>
                         <a
-                            href="https://x.com/Alaa_Ali303?t=PNnKQoESKv8YaA2O_5UQrg&s=09"
-                            target="_blank" rel="noopener noreferrer"
-                            class="social-link"><i
-                                class="fab fa-twitter"></i></a>
-                        <a
-                            href="https://www.instagram.com/al3amousa?igsh=M3pvanE4dWt5eGhx"
-                            target="_blank" rel="noopener noreferrer"
-                            class="social-link"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="http://www.linkedin.com/in/alaa-ali-8a7348228"
-                            target="_blank"
+                            href="=https://www.instagram.com/al3amousa?igsh=M3pvanE4dWt5eGhx"
                             rel="noopener noreferrer"
-                            class="social-link"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/alaamousa12" target="_blank"
-                            rel="noopener noreferrer"
-                            class="social-link"><i
-                                class="fab fa-github"></i></a>
+                            target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img
-                        src="images/alaa.jpg"
-                        alt="Alaa Ali"> <!-- Picture me -->
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="section" id="about">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <div class="about-image">
-                        <img
-                            src="images/alaa.jpg"
-                            alt="About Alaa Ali">
+                <div class="hero-image reveal-right">
+                    <div class="img-blob">
+                        <img src="images/alaa.jpg" alt="Alaa Ali">
                     </div>
-                    <div class="about-text">
-                        <h3>Mobile App Developer | Flutter Enthusiast</h3>
-                        <p>Hello! I'm Alaa Ali, a passionate mobile app
-                            developer specializing in Flutter.
-                            I create cross-platform applications that deliver
-                            seamless experiences on both Android and iOS.
-                            I love turning creative ideas into fast, functional,
-                            and user-friendly mobile apps.</p>
-                        <p>My goal is to build mobile solutions that are
-                            visually appealing, highly performant,
-                            and powered by clean, scalable code that follows
-                            best practices.</p>
-
-                        <div class="about-info">
-                            <div class="info-item">
-                                <i class="fas fa-graduation-cap"></i>
-                                <span>Bachelor's in Information
-                                    Technology</span>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-briefcase"></i>
-                                <span>2+ Years Experience</span>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-tasks"></i>
-                                <span>5+ Projects Completed</span>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Egypt, Beheira, Kom Hamada</span>
-                            </div>
-                        </div>
-
-                        <a href="files/CV_Alaa.pdf" class="btn"
-                            target="_blank">Download CV</a>
-                    </div>
+                    <div class="floating-icon flutter-icon"><i
+                            class="fab fa-flutter"></i></div>
+                    <div class="floating-icon code-icon"><i
+                            class="fas fa-code"></i></div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section class="section" id="skills">
+        <!-- <section class="section about" id="about">
             <div class="container">
-                <h2 class="section-title">My Skills</h2>
-                <div class="skills-container">
-                    <div class="skills-column">
-                        <h3 class="skills-title">Technical Skills</h3>
-
-                        <div class="skill">
-                            <div class="skill-header">
-                                <span>Dart</span>
-                                <span>75%</span>
+                <h2 class="section-title reveal-up">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-img reveal-left">
+                        <img src="images/Alaa1.jpeg" alt="About Alaa">
+                        <div class="experience-badge">
+                            <h3>2+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                    </div>
+                    <div class="about-info reveal-right">
+                        <h3>Developing with passion & precision.</h3>
+                        <p>
+                            I am a software engineer based in Alexandria, Egypt,
+                            specialized in <strong>Flutter & Dart</strong>.
+                            I build scalable, user-friendly mobile apps with
+                            clean architecture and modern UI principles.
+                        </p>
+                        <div class="stats-box">
+                            <div class="stat">
+                                <h3>20+</h3>
+                                <p>Projects</p>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress"
-                                    data-width="75%"></div>
+                            <div class="stat">
+                                <h3>100+</h3>
+                                <p>Commits</p>
+                            </div>
+                            <div class="stat">
+                                <h3>5+</h3>
+                                <p>Certificates</p>
                             </div>
                         </div>
+                        <a href="files/CV_Alaa.pdf" target="_blank"
+                            class="btn btn-primary">Download CV <i
+                                class="fas fa-download"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
 
-                        <div class="skill">
-                            <div class="skill-header">
-                                <span>Flutter</span>
-                                <span>70%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress"
-                                    data-width="70%"></div>
-                            </div>
+        <section class="section about" id="about">
+            <div class="container">
+                <div class="about-grid">
+
+                    <div class="about-img-wrapper reveal-left">
+                        <div class="img-frame">
+                            <img src="images/Alaa1.jpeg" alt="Alaa Ali">
                         </div>
-
-                        <div class="skill">
-                            <div class="skill-header">
-                                <span>SQl</span>
-                                <span>50%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress"
-                                    data-width="50%"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill">
-                            <div class="skill-header">
-                                <span>Firebase</span>
-                                <span>65%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress"
-                                    data-width="65%"></div>
+                        <div class="experience-float">
+                            <div class="exp-icon"><i
+                                    class="fas fa-code-branch"></i></div>
+                            <div class="exp-text">
+                                <h3>2+ Years</h3>
+                                <p>of Professional <br> Development</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="skills-column">
-                        <h3 class="skills-title">Professional Skills</h3>
+                    <div class="about-info reveal-right">
+                        <h4 class="sub-heading">WHO I AM</h4>
+                        <h2 class="about-title">Crafting High-Performance <br>
+                            <span class="highlight">Digital
+                                Experiences</span></h2>
 
-                        <div class="skill">
-                            <div class="skill-header">
-                                <span>Communication</span>
-                                <span>85%</span>
+                        <p class="about-desc">
+                            I am a passionate <strong>Software Engineer</strong>
+                            & <strong>Flutter Expert</strong> based in Egypt.
+                            I don't just write code; I engineer scalable
+                            solutions. My expertise lies in building
+                            cross-platform applications
+                            that merge <strong>Clean Architecture</strong> with
+                            stunning <strong>UI/UX</strong>.
+                        </p>
+                        <p class="about-desc">
+                            Whether it's optimizing performance, integrating
+                            complex APIs, or managing state with
+                            <strong>Bloc/Cubit</strong>,
+                            I am dedicated to delivering bug-free, maintainable,
+                            and efficient code that brings ideas to life.
+                        </p>
+
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <h3>10+</h3>
+                                <p>Completed Projects</p>
                             </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress"
-                                    data-width="85%"></div>
+                            <div class="stat-item">
+                                <h3>7+</h3>
+                                <p>Pro Certificates</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>100%</h3>
+                                <p>Client Satisfaction</p>
                             </div>
                         </div>
 
-                        <div class="skill">
-                            <div class="skill-header">
-                                <span>Teamwork</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress"
-                                    data-width="85%"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill">
-                            <div class="skill-header">
-                                <span>Project Management</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress"
-                                    data-width="80%"></div>
-                            </div>
+                        <div class="about-btns">
+                            <a href="files/CV_Alaa.pdf" target="_blank"
+                                class="btn btn-primary">
+                                Download CV <i class="fas fa-download"></i>
+                            </a>
+                            <a href="#projects" class="btn btn-outline">
+                                View Portfolio
+                            </a>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-
-        <section class="section" id="projects">
+        <!-- <section class="section skills" id="skills">
             <div class="container">
-                <h2 class="section-title">My Projects</h2>
+                <h2 class="section-title reveal-up">My Skills & Expertise</h2>
+                <div class="skills-grid">
 
-                <!-- Filter Buttons -->
-                <div class="projects-filters">
+                    <div class="skill-card reveal-up"
+                        style="--color: #42A5F5; transition-delay: 0.1s;">
+                        <div class="icon-wrapper">
+                            <svg class="skill-icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 1660.2 1660.2" fill="currentColor">
+                                <path
+                                    d="M978.8 920.6l239.3-239.3 239.3 239.3-239.3 239.3zM495.6 1162.2l239.3-239.3 483.3 483.3h-478.6zM1457.4 202.6l-717.9 718-243.9-243.9L1213.5 202.6z" />
+                            </svg>
+                        </div>
+                        <h3>Flutter</h3>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #0175C2; transition-delay: 0.2s;">
+                        <div class="icon-wrapper"><i
+                                class="fas fa-code skill-icon"></i></div>
+                        <h3>Dart</h3>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #7C4DFF; transition-delay: 0.25s;">
+                        <div class="icon-wrapper"><i
+                                class="fas fa-layer-group skill-icon"></i></div>
+                        <h3>State Management</h3>
+                        <p class="skill-sub">Bloc & Provider</p>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #FFCA28; transition-delay: 0.3s;">
+                        <div class="icon-wrapper"><i
+                                class="fas fa-fire skill-icon"></i></div>
+                        <h3>Firebase</h3>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #009688; transition-delay: 0.4s;">
+                        <div class="icon-wrapper"><i
+                                class="fas fa-network-wired skill-icon"></i></div>
+                        <h3>REST APIs</h3>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #4CAF50; transition-delay: 0.45s;">
+                        <div class="icon-wrapper"><i
+                                class="fas fa-sitemap skill-icon"></i></div>
+                        <h3>Clean Arch.</h3>
+                        <p class="skill-sub">MVVM & MVC</p>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #F4511E; transition-delay: 0.5s;">
+                        <div class="icon-wrapper"><i
+                                class="fab fa-git-alt skill-icon"></i></div>
+                        <h3>Git & GitHub</h3>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #0277BD; transition-delay: 0.6s;">
+                        <div class="icon-wrapper"><i
+                                class="fas fa-database skill-icon"></i></div>
+                        <h3>SQL / NoSQL</h3>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #E91E63; transition-delay: 0.7s;">
+                        <div class="icon-wrapper"><i
+                                class="fab fa-figma skill-icon"></i></div>
+                        <h3>UI/UX Design</h3>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #FF6C37; transition-delay: 0.8s;">
+                        <div class="icon-wrapper"><i
+                                class="fas fa-paper-plane skill-icon"></i></div>
+                        <h3>Postman</h3>
+                    </div>
+
+                </div>
+            </div>
+        </section> -->
+
+        <section class="section skills" id="skills">
+            <div class="container">
+                <h2 class="section-title reveal-up">My Skills & Expertise</h2>
+                <div class="skills-grid">
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #42A5F5; transition-delay: 0.1s;">
+                        <div class="icon-wrapper">
+                            <svg class="skill-icon"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 1660.2 1660.2" fill="currentColor">
+                                <path
+                                    d="M978.8 920.6l239.3-239.3 239.3 239.3-239.3 239.3zM495.6 1162.2l239.3-239.3 483.3 483.3h-478.6zM1457.4 202.6l-717.9 718-243.9-243.9L1213.5 202.6z" />
+                            </svg>
+                        </div>
+                        <h3>Flutter</h3>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #0175C2; transition-delay: 0.2s;">
+                        <div class="icon-wrapper"><i
+                                class="fas fa-code skill-icon"></i></div>
+                        <h3>Dart</h3>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #7C4DFF; transition-delay: 0.25s;">
+                        <div class="icon-wrapper"><i
+                                class="fas fa-layer-group skill-icon"></i></div>
+                        <h3>State Management</h3>
+                        <p class="skill-sub">Bloc & Provider</p>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #FFCA28; transition-delay: 0.3s;">
+                        <div class="icon-wrapper"><i
+                                class="fas fa-fire skill-icon"></i></div>
+                        <h3>Firebase</h3>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #009688; transition-delay: 0.4s;">
+                        <div class="icon-wrapper"><i
+                                class="fas fa-network-wired skill-icon"></i></div>
+                        <h3>REST APIs</h3>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #F4511E; transition-delay: 0.5s;">
+                        <div class="icon-wrapper"><i
+                                class="fab fa-git-alt skill-icon"></i></div>
+                        <h3>Git & GitHub</h3>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #0277BD; transition-delay: 0.6s;">
+                        <div class="icon-wrapper"><i
+                                class="fas fa-database skill-icon"></i></div>
+                        <h3>SQL / NoSQL</h3>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #E91E63; transition-delay: 0.7s;">
+                        <div class="icon-wrapper"><i
+                                class="fab fa-figma skill-icon"></i></div>
+                        <h3>UI/UX Design</h3>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #FF6C37; transition-delay: 0.8s;">
+                        <div class="icon-wrapper"><i
+                                class="fas fa-paper-plane skill-icon"></i></div>
+                        <h3>Postman</h3>
+                    </div>
+
+                    <div class="skill-card reveal-up"
+                        style="--color: #4CAF50; transition-delay: 0.45s;">
+                        <div class="icon-wrapper"><i
+                                class="fas fa-sitemap skill-icon"></i></div>
+                        <h3>Clean Arch.</h3>
+                        <p class="skill-sub">MVVM & MVC</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section projects" id="projects">
+            <div class="container">
+                <h2 class="section-title reveal-up">Latest Projects</h2>
+
+                <div class="project-filters reveal-up">
                     <button class="filter-btn active"
                         data-filter="all">All</button>
-                    <button class="filter-btn"
-                        data-filter="app">Applications</button>
+                    <button class="filter-btn" data-filter="app">Apps</button>
                     <button class="filter-btn"
                         data-filter="ecommerce">E-commerce</button>
                 </div>
 
-                <!-- Projects Grid -->
                 <div class="projects-grid">
-
-                    <!-- Food Application -->
-                    <div class="project-card" data-category="app">
-                        <img src="images/foodapp.jpg" alt="Food App"
-                            class="project-img">
-                        <div class="project-content">
-                            <h3 class="project-title">Food Application</h3>
-                            <p class="project-description">
-                                A cross-platform food delivery app built with
-                                Flutter, integrated with Firebase
-                                for authentication and real-time database.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Flutter</span>
-                                <span class="project-tag">Dart</span>
-                                <span class="project-tag">API</span>
-                            </div>
-                            <div class="project-links">
-                                <a
-                                    href="https://www.linkedin.com/posts/alaa-ali-8a7348228_flutterdev-mobiledevelopment-sqlite-activity-7355278226459439105-IUDM"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="project-link">
-                                    <i class="fas fa-eye"></i> Preview
-                                </a>
+                    <div class="project-card reveal-up" data-category="app">
+                        <div class="project-img">
+                            <img src="images/foodapp.jpg" alt="Food App">
+                            <div class="overlay">
                                 <a
                                     href="https://github.com/alaamousa12/foodaplication"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="project-link">
-                                    <i class="fab fa-github"></i> Code
-                                </a>
+                                    class="icon-link"><i
+                                        class="fab fa-github"></i></a>
+                                <a href="#" class="icon-link"><i
+                                        class="fas fa-eye"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Food Delivery App</h3>
+                            <p>Full-featured delivery app with Firebase
+                                backend.</p>
+                            <div class="tags">
+                                <span>Flutter</span><span>Firebase</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-card" data-category="app">
-                        <img src="images/weather.jpg"
-                            alt="Basketball Counter" class="project-img">
-                        <div class="project-content">
-                            <h3 class="project-title">Weather App</h3>
-                            <p class="project-description">
-                                A simple Weather App where you select a country
-                                or city to view its current weather.
-                                Built with Flutter and Dart.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Flutter</span>
-                                <span class="project-tag">Dart</span>
-                                <span class="project-tag">API</span>
-                            </div>
-                            <div class="project-links">
-                                <!-- <a
-                                    href="https://www.linkedin.com/posts/alaa-ali-8a7348228_flutter-dart-mobiledevelopment-activity-7363194557787758592-2UDA"
-                                    class="project-link">
-                                    <i class="fas fa-eye"></i> Preview
-                                </a> -->
+                    <div class="project-card reveal-up" data-category="app">
+                        <div class="project-img">
+                            <img src="images/weather.jpg" alt="Weather App">
+                            <div class="overlay">
                                 <a
                                     href="https://github.com/alaamousa12/weatherapp"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="project-link">
-                                    <i class="fab fa-github"></i> Code
-                                </a>
+                                    class="icon-link"><i
+                                        class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Weather Forecast</h3>
+                            <p>Real-time weather tracking utilizing REST
+                                APIs.</p>
+                            <div class="tags">
+                                <span>Dart</span><span>API</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- E-commerce Store -->
-                    <div class="project-card" data-category="ecommerce">
-                        <img src="images/toku.png" alt="E-commerce Store"
-                            class="project-img">
-                        <div class="project-content">
-                            <h3 class="project-title">Toku App</h3>
-                            <p class="project-description">
-                                A Japanese learning app that teaches family
-                                members, numbers, and colors.
-                                Built with Flutter and Dart.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Flutter</span>
-                                <span class="project-tag">Dart</span>
-                            </div>
-                            <div class="project-links">
-                                <!-- <a href="https://www.linkedin.com/..."
-                                    class="project-link">
-                                    <i class="fas fa-eye"></i> Preview
-                                </a> -->
+                    <div class="project-card reveal-up"
+                        data-category="ecommerce">
+                        <div class="project-img">
+                            <img src="images/toku.png" alt="Toku App">
+                            <div class="overlay">
                                 <a
                                     href="https://github.com/alaamousa12/language_japan"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="project-link">
-                                    <i class="fab fa-github"></i> Code
-                                </a>
+                                    class="icon-link"><i
+                                        class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Toku App</h3>
+                            <p>Interactive language learning application.</p>
+                            <div class="tags">
+                                <span>Education</span><span>Audio</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Basketball Counter -->
-                    <div class="project-card" data-category="app">
-                        <img src="images/basketball.jpg"
-                            alt="Basketball Counter" class="project-img">
-                        <div class="project-content">
-                            <h3 class="project-title">Basketball Counter</h3>
-                            <p class="project-description">
-                                A simple and interactive basketball score
-                                counter app built with Flutter and Dart.
-                                It allows tracking points for two teams with
-                                real-time updates.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Flutter</span>
-                                <span class="project-tag">Dart</span>
-                            </div>
-                            <div class="project-links">
-                                <a
-                                    href="https://www.linkedin.com/posts/alaa-ali-8a7348228_flutter-dart-mobiledevelopment-activity-7363194557787758592-2UDA"
+                    <div class="project-card reveal-up"
+                        data-category="ecommerce">
+                        <div class="project-img">
+                            <img src="images/chat.png" alt="Chat App">
+                            <div class="overlay">
+                                <a href="https://github.com/alaamousa12/chatapp"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="project-link">
-                                    <i class="fas fa-eye"></i> Preview
-                                </a>
-                                <a
-                                    href="https://github.com/alaamousa12/Basketball_Counter"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="project-link">
-                                    <i class="fab fa-github"></i> Code
-                                </a>
+                                    class="icon-link"><i
+                                        class="fab fa-github"></i></a>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="project-card" data-category="ecommerce">
-                        <img src="images/chat.png" alt="E-commerce Store"
-                            class="project-img">
-                        <div class="project-content">
-                            <h3 class="project-title">Chat App</h3>
-                            <p class="project-description">
-                                A simple chat application that allows two users
-                                to communicate in real time.
-                                Built with Flutter and Dart, powered by Firebase
-                                for authentication and messaging.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Flutter</span>
-                                <span class="project-tag">Dart</span>
-                                <span class="project-tag">Firebase</span>
-                            </div>
-                            <div class="project-links">
-                                <!-- <a href="https://www.linkedin.com/..."
-                                    class="project-link">
-                                    <i class="fas fa-eye"></i> Preview
-                                </a> -->
-                                <a
-                                    href="https://github.com/alaamousa12/chatapp"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="project-link">
-                                    <i class="fab fa-github"></i> Code
-                                </a>
+                        <div class="project-info">
+                            <h3>Flash Chat</h3>
+                            <p>Real-time messaging with Firestore.</p>
+                            <div class="tags">
+                                <span>Chat</span><span>Firestore</span>
                             </div>
                         </div>
                     </div>
@@ -439,319 +480,563 @@
             </div>
         </section>
 
-        <!-- Certificates Section -->
-        <section class="section" id="certificates">
+        <section class="section courses" id="certificates">
             <div class="container">
-                <h2 class="section-title">My Certificates & Achievements</h2>
+                <h2 class="section-title reveal-up">Courses & Training</h2>
 
-                <div class="certificates-container">
+                <div class="courses-grid">
 
-                    <div class="certificate-card">
-                        <div class="certificate-image">
-                            <img src="images/photo.png"
-                                alt="Artificial Intelligence Certificate"
-                                class="certificate-img">
-                            <div class="image-overlay"></div>
+                    <div class="course-card reveal-up"
+                        data-course-target="#modal-iti">
+                        <div class="course-img-box">
+                            <img src="images/certificate.jpg" alt="Flutter ITI">
+                            <span class="course-year-badge">2023</span>
                         </div>
-                        <h3 class="certificate-title">Artificial Intelligence
-                            Certificate</h3>
-                        <p class="certificate-description">Specialized in
-                            machine learning, neural networks, and computer
-                            vision applications</p>
+                        <div class="course-content">
+                            <h3>Flutter Development</h3>
+                            <p class="course-provider">ITI (Information
+                                Technology Institute)</p>
+                        </div>
+                        <div class="card-overlay"><i class="fas fa-plus"></i>
+                            View Details</div>
                     </div>
 
-                    <div class="certificate-card">
-                        <div class="certificate-image">
-                            <img src="images/certificate.jpg"
-                                alt="Artificial Intelligence Certificate"
-                                class="certificate-img">
-                            <div class="image-overlay"></div>
-                        </div>
-                        <h3 class="certificate-title">Flutter Mobile App
-                            Development(ITI)
-                            Certificate</h3>
-                        <p class="certificate-description">successfully
-                            completed the “Developing Mobile Applications using
-                            Flutter” course at the Information Technology
-                            Institute (ITI).</p>
-                    </div>
-
-                    <div class="certificate-card">
-                        <div class="certificate-image">
-                            <img src="images/spintflutter.jpg"
-                                alt="Advanced Flutter Development Certificate"
-                                class="certificate-img">
-                            <div class="image-overlay"></div>
-                        </div>
-                        <h3 class="certificate-title">Advanced Flutter
-                            Development Certificate</h3>
-                        <p class="certificate-description">Advanced training in
-                            building scalable and optimized Flutter apps for
-                            Android & iOS</p>
-                    </div>
-                    <div class="certificate-card">
-                        <div class="certificate-image">
-                            <img src="images/fluttercodecamp.jpg"
-                                alt="Advanced Flutter Development Certificate"
-                                class="certificate-img">
-                            <div class="image-overlay"></div>
-                        </div>
-                        <h3 class="certificate-title">Flutter
-                            Boot Camp Certificate</h3>
-                        <p class="certificate-description">Completed an
-                            intensive 21-hour Flutter Boot Camp by Easy Learn
-                            Academy, covering core concepts and practical
-                            applications of mobile app development using Flutter
-                            & Dart</p>
-                    </div>
-
-                    <div class="certificate-card">
-                        <div class="certificate-image">
+                    <div class="course-card reveal-up"
+                        data-course-target="#modal-creativa"
+                        style="transition-delay: 0.1s;">
+                        <div class="course-img-box">
                             <img src="images/cerativaflutter.jpg"
-                                alt="Flutter Training Program Certificate"
-                                class="certificate-img">
-                            <div class="image-overlay"></div>
+                                alt="Creativa Flutter">
+                            <span class="course-year-badge">2023</span>
                         </div>
-                        <h3 class="certificate-title">Flutter Training Program
-                            Certificate</h3>
-                        <p class="certificate-description">Completed a
-                            professional training in Flutter framework for
-                            cross-platform mobile app development</p>
+                        <div class="course-content">
+                            <h3>Flutter Training (70 Hrs)</h3>
+                            <p class="course-provider">Creativa / TIEC / ITI</p>
+                        </div>
+                        <div class="card-overlay"><i class="fas fa-plus"></i>
+                            View Details</div>
                     </div>
 
-                    <div class="certificate-card">
-                        <div class="certificate-image">
-                            <img src="images/indorductioninternet.jpg"
-                                alt="Introduction to Internet Certificate"
-                                class="certificate-img">
-                            <div class="image-overlay"></div>
+                    <div class="course-card reveal-up"
+                        data-course-target="#modal-huawei"
+                        style="transition-delay: 0.2s;">
+                        <div class="course-img-box">
+                            <img src="images/Huawei.png" alt="Huawei AI">
+                            <span class="course-year-badge">2025</span>
                         </div>
-                        <h3 class="certificate-title">Introduction to Internet
-                            Certificate</h3>
-                        <p class="certificate-description">Certification
-                            covering the basics of Internet technologies,
-                            networking, and online communication</p>
+                        <div class="course-content">
+                            <h3>HCIA-AI V4.0</h3>
+                            <p class="course-provider">Huawei ICT Academy</p>
+                        </div>
+                        <div class="card-overlay"><i class="fas fa-plus"></i>
+                            View Details</div>
                     </div>
 
-                    <div class="certificate-card">
-                        <div class="certificate-image">
+                    <div class="course-card reveal-up"
+                        data-course-target="#modal-bootcamp"
+                        style="transition-delay: 0.25s;">
+                        <div class="course-img-box">
+                            <img src="images/fluttercodecamp.jpg"
+                                alt="Flutter Boot Camp">
+                            <span class="course-year-badge">2025</span>
+                        </div>
+                        <div class="course-content">
+                            <h3>Flutter Boot Camp</h3>
+                            <p class="course-provider">Easy Learn Academy</p>
+                        </div>
+                        <div class="card-overlay"><i class="fas fa-plus"></i>
+                            View Details</div>
+                    </div>
+
+                    <div class="course-card reveal-up"
+                        data-course-target="#modal-data"
+                        style="transition-delay: 0.3s;">
+                        <div class="course-img-box">
                             <img src="images/interdutiondatascience.jpg"
-                                alt="Introduction to Data Science Certificate"
-                                class="certificate-img">
-                            <div class="image-overlay"></div>
+                                alt="Data Science">
+                            <span class="course-year-badge">2025</span>
                         </div>
-                        <h3 class="certificate-title">Introduction to Data
-                            Science Certificate</h3>
-                        <p class="certificate-description">Learned fundamentals
-                            of data analysis, visualization, and SQL & NoSQL
-                            databases</p>
+                        <div class="course-content">
+                            <h3>Intro to Data Science</h3>
+                            <p class="course-provider">Cisco Networking
+                                Academy</p>
+                        </div>
+                        <div class="card-overlay"><i class="fas fa-plus"></i>
+                            View Details</div>
                     </div>
 
-                    <div class="certificate-card">
-                        <div class="certificate-image">
+                    <div class="course-card reveal-up"
+                        data-course-target="#modal-cyber"
+                        style="transition-delay: 0.4s;">
+                        <div class="course-img-box">
                             <img src="images/intordutioncybersecurity.jpg"
-                                alt="Introduction to Cybersecurity Certificate"
-                                class="certificate-img">
-                            <div class="image-overlay"></div>
+                                alt="Cybersecurity">
+                            <span class="course-year-badge">2025</span>
                         </div>
-                        <h3 class="certificate-title">Introduction to
-                            Cybersecurity Certificate</h3>
-                        <p class="certificate-description">Completed training in
-                            cybersecurity principles, protecting systems, and
-                            securing networks</p>
+                        <div class="course-content">
+                            <h3>Intro to Cybersecurity</h3>
+                            <p class="course-provider">Cisco Networking
+                                Academy</p>
+                        </div>
+                        <div class="card-overlay"><i class="fas fa-plus"></i>
+                            View Details</div>
                     </div>
 
-                    <div class="certificate-card">
-                        <div class="certificate-image">
-                            <img src="images/cerativaccna.jpg"
-                                alt="Creativa CCNA Certificate"
-                                class="certificate-img">
-                            <div class="image-overlay"></div>
+                    <div class="course-card reveal-up"
+                        data-course-target="#modal-iot"
+                        style="transition-delay: 0.5s;">
+                        <div class="course-img-box">
+                            <img src="images/indorductioninternet.jpg"
+                                alt="IoT">
+                            <span class="course-year-badge">2025</span>
                         </div>
-                        <h3 class="certificate-title">Creativa CCNA
-                            Certificate</h3>
-                        <p class="certificate-description">Certified in computer
-                            networks fundamentals, routing, and switching with
-                            Cisco CCNA program</p>
+                        <div class="course-content">
+                            <h3>Intro to IoT</h3>
+                            <p class="course-provider">Cisco Networking
+                                Academy</p>
+                        </div>
+                        <div class="card-overlay"><i class="fas fa-plus"></i>
+                            View Details</div>
+                    </div>
+
+                    <div class="course-card reveal-up"
+                        data-course-target="#modal-adv-flutter"
+                        style="transition-delay: 0.6s;">
+                        <div class="course-img-box">
+                            <img src="images/spintflutter.jpg"
+                                alt="Advanced Flutter">
+                            <span class="course-year-badge">2023</span>
+                        </div>
+                        <div class="course-content">
+                            <h3>Advanced Flutter Techniques</h3>
+                            <p class="course-provider">Online Platform</p>
+                        </div>
+                        <div class="card-overlay"><i class="fas fa-plus"></i>
+                            View Details</div>
+                    </div>
+
+                    <div class="course-card reveal-up"
+                        data-course-target="#modal-ccna"
+                        style="transition-delay: 0.7s;">
+                        <div class="course-img-box">
+                            <img src="images/cerativaccna.jpg" alt="CCNA">
+                            <span class="course-year-badge">2022</span>
+                        </div>
+                        <div class="course-content">
+                            <h3>CCNA Routing & Switching</h3>
+                            <p class="course-provider">Cisco / Training
+                                Center</p>
+                        </div>
+                        <div class="card-overlay"><i class="fas fa-plus"></i>
+                            View Details</div>
                     </div>
 
                 </div>
             </div>
+
+            <div class="modals-container">
+
+                <div class="course-modal" id="modal-iti">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-content-box">
+                        <button class="modal-close-btn">&times;</button>
+                        <div class="modal-header">
+                            <img src="images/certificate.jpg" alt="Flutter ITI">
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-meta">
+                                <span class="meta-badge"><i
+                                        class="far fa-calendar-alt"></i>
+                                    2023</span>
+                                <span class="meta-badge"><i
+                                        class="fas fa-university"></i> ITI
+                                    Institute</span>
+                            </div>
+                            <h3>Intensive Flutter Development</h3>
+                            <p class="modal-description">A comprehensive 3-month
+                                intensive program building cross-platform
+                                apps.</p>
+                            <h4><i class="fas fa-lightbulb"></i> Key
+                                Learnings:</h4>
+                            <ul class="modal-learn-list">
+                                <li>Dart & OOP Fundamentals.</li>
+                                <li>State Management (Bloc/Cubit).</li>
+                                <li>API Integration.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-modal" id="modal-creativa">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-content-box">
+                        <button class="modal-close-btn">&times;</button>
+                        <div class="modal-header">
+                            <img src="images/cerativaflutter.jpg"
+                                alt="Creativa Flutter">
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-meta">
+                                <span class="meta-badge"><i
+                                        class="far fa-calendar-alt"></i>
+                                    2023</span>
+                                <span class="meta-badge"><i
+                                        class="fas fa-laptop-code"></i> Creativa
+                                    Hub</span>
+                            </div>
+                            <h3>Flutter Training Program (70 Hrs)</h3>
+                            <p class="modal-description">Intensive 70-hour
+                                training sponsored by ITIDA and TIEC focused on
+                                practical app development.</p>
+                            <h4><i class="fas fa-lightbulb"></i> Key
+                                Learnings:</h4>
+                            <ul class="modal-learn-list">
+                                <li>Building responsive UIs.</li>
+                                <li>Widget Lifecycle.</li>
+                                <li>Project Structure & Clean Code.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-modal" id="modal-huawei">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-content-box">
+                        <button class="modal-close-btn">&times;</button>
+                        <div class="modal-header">
+                            <img src="images/Huawei.png" alt="Huawei AI">
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-meta">
+                                <span class="meta-badge"><i
+                                        class="far fa-calendar-alt"></i>
+                                    2025</span>
+                                <span class="meta-badge"><i
+                                        class="fas fa-robot"></i> Huawei
+                                    ICT</span>
+                            </div>
+                            <h3>HCIA-AI V4.0 Certification</h3>
+                            <p class="modal-description">Professional
+                                certification in Artificial Intelligence
+                                fundamentals and Huawei AI solutions.</p>
+                            <h4><i class="fas fa-lightbulb"></i> Key
+                                Learnings:</h4>
+                            <ul class="modal-learn-list">
+                                <li>Machine Learning & Deep Learning
+                                    basics.</li>
+                                <li>TensorFlow & PyTorch frameworks.</li>
+                                <li>Huawei Atlas AI computing platform.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-modal" id="modal-data">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-content-box">
+                        <button class="modal-close-btn">&times;</button>
+                        <div class="modal-header">
+                            <img src="images/interdutiondatascience.jpg"
+                                alt="Data Science">
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-meta">
+                                <span class="meta-badge"><i
+                                        class="far fa-calendar-alt"></i>
+                                    2025</span>
+                                <span class="meta-badge"><i
+                                        class="fas fa-chart-bar"></i>
+                                    Cisco</span>
+                            </div>
+                            <h3>Introduction to Data Science</h3>
+                            <p class="modal-description">Understanding the
+                                basics of data analysis and how data drives
+                                decision-making.</p>
+                            <h4><i class="fas fa-lightbulb"></i> Key
+                                Learnings:</h4>
+                            <ul class="modal-learn-list">
+                                <li>Data Analytics basics.</li>
+                                <li>Role of data in AI/ML.</li>
+                                <li>Data visualization concepts.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-modal" id="modal-cyber">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-content-box">
+                        <button class="modal-close-btn">&times;</button>
+                        <div class="modal-header">
+                            <img src="images/intordutioncybersecurity.jpg"
+                                alt="Cybersecurity">
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-meta">
+                                <span class="meta-badge"><i
+                                        class="far fa-calendar-alt"></i>
+                                    2025</span>
+                                <span class="meta-badge"><i
+                                        class="fas fa-shield-alt"></i>
+                                    Cisco</span>
+                            </div>
+                            <h3>Introduction to Cybersecurity</h3>
+                            <p class="modal-description">Learning how to protect
+                                personal data and understanding cyber
+                                threats.</p>
+                            <h4><i class="fas fa-lightbulb"></i> Key
+                                Learnings:</h4>
+                            <ul class="modal-learn-list">
+                                <li>Online safety & privacy.</li>
+                                <li>Common cyber threats & attacks.</li>
+                                <li>Network security basics.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-modal" id="modal-iot">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-content-box">
+                        <button class="modal-close-btn">&times;</button>
+                        <div class="modal-header">
+                            <img src="images/indorductioninternet.jpg"
+                                alt="IoT">
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-meta">
+                                <span class="meta-badge"><i
+                                        class="far fa-calendar-alt"></i>
+                                    2025</span>
+                                <span class="meta-badge"><i
+                                        class="fas fa-wifi"></i> Cisco</span>
+                            </div>
+                            <h3>Introduction to IoT</h3>
+                            <p class="modal-description">Exploring the
+                                interconnected world of devices and digital
+                                transformation.</p>
+                            <h4><i class="fas fa-lightbulb"></i> Key
+                                Learnings:</h4>
+                            <ul class="modal-learn-list">
+                                <li>IoT concepts and impact.</li>
+                                <li>Connecting devices to networks.</li>
+                                <li>Automation and AI in IoT.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-modal" id="modal-adv-flutter">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-content-box">
+                        <button class="modal-close-btn">&times;</button>
+                        <div class="modal-header">
+                            <img src="images/spintflutter.jpg"
+                                alt="Advanced Flutter">
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-meta">
+                                <span class="meta-badge"><i
+                                        class="far fa-calendar-alt"></i>
+                                    2023</span>
+                                <span class="meta-badge"><i
+                                        class="fas fa-laptop-code"></i>
+                                    Sprints</span>
+                            </div>
+                            <h3>Advanced Flutter Techniques</h3>
+                            <p class="modal-description">Deep dive into advanced
+                                topics for scalable app development.</p>
+                            <h4><i class="fas fa-lightbulb"></i> Key
+                                Learnings:</h4>
+                            <ul class="modal-learn-list">
+                                <li>Clean Architecture.</li>
+                                <li>Animation techniques.</li>
+                                <li>Performance profiling.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-modal" id="modal-ccna">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-content-box">
+                        <button class="modal-close-btn">&times;</button>
+                        <div class="modal-header">
+                            <img src="images/cerativaccna.jpg" alt="CCNA">
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-meta">
+                                <span class="meta-badge"><i
+                                        class="far fa-calendar-alt"></i>
+                                    2022</span>
+                                <span class="meta-badge"><i
+                                        class="fas fa-network-wired"></i>
+                                    Cisco</span>
+                            </div>
+                            <h3>CCNA Routing & Switching</h3>
+                            <p class="modal-description">Foundational knowledge
+                                in network fundamentals and IP connectivity.</p>
+                            <h4><i class="fas fa-lightbulb"></i> Key
+                                Learnings:</h4>
+                            <ul class="modal-learn-list">
+                                <li>Network topologies.</li>
+                                <li>Routing protocols (OSPF).</li>
+                                <li>Switching & VLANs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-modal" id="modal-bootcamp">
+                    <div class="modal-overlay"></div>
+                    <div class="modal-content-box">
+                        <button class="modal-close-btn">&times;</button>
+                        <div class="modal-header">
+                            <img src="images/fluttercodecamp.jpg"
+                                alt="Flutter Boot Camp">
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-meta">
+                                <span class="meta-badge"><i
+                                        class="far fa-calendar-alt"></i>
+                                    2025</span>
+                                <span class="meta-badge"><i
+                                        class="fas fa-clock"></i> 21
+                                    Hours</span>
+                                <span class="meta-badge"><i
+                                        class="fas fa-laptop-code"></i> Easy
+                                    Learn</span>
+                            </div>
+                            <h3>Flutter Boot Camp</h3>
+                            <p class="modal-description">
+                                An intensive 21-hour bootcamp covering essential
+                                concepts and practical applications of mobile
+                                app development using Flutter & Dart, preparing
+                                for real-world projects.
+                            </p>
+                            <h4><i class="fas fa-lightbulb"></i> Key
+                                Learnings:</h4>
+                            <ul class="modal-learn-list">
+                                <li>Essential Flutter & Dart concepts.</li>
+                                <li>Practical mobile app development.</li>
+                                <li>Real-world project preparation.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="section" id="contact">
+        <section class="section contact" id="contact">
             <div class="container">
-                <h2 class="section-title">Contact Me</h2>
-
-                <div class="contact-container">
-                    <div class="contact-info">
+                <h2 class="section-title reveal-up">Contact Me</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-details reveal-left">
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h3>Location</h3>
-                                <p>Egypt, Beheira, Kom Hamada</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
+                            <div class="icon-box"><i
+                                    class="fas fa-envelope"></i></div>
                             <div>
                                 <h3>Email</h3>
-                                <p><a
-                                        href="mailto:alaamosa3322@gmail.com">alaamosa3322@gmail.com</a></p>
+                                <a
+                                    href="mailto:alaamosa3322@gmail.com">alaamosa3322@gmail.com</a>
                             </div>
                         </div>
-
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
+                            <div class="icon-box"><i
+                                    class="fas fa-phone"></i></div>
                             <div>
                                 <h3>Phone</h3>
-                                <p><a href="tel:+201064886318">+20
-                                        1064886318</a></p>
+                                <a href="tel:+201064886318">+20 106 488 6318</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-box"><i
+                                    class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h3>Location</h3>
+                                <p>Alexandria, Egypt</p>
                             </div>
                         </div>
                     </div>
 
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Your
-                                Name</label>
+                    <form id="contact-form" class="contact-form reveal-right">
+                        <div class="input-group">
                             <input type="text" id="name" name="user_name"
-                                class="form-control"
-                                placeholder="Enter your name" required>
+                                required placeholder=" ">
+                            <label for="name">Your Name</label>
                         </div>
-
-                        <div class="form-group">
-                            <label for="email" class="form-label">Your
-                                Email</label>
+                        <div class="input-group">
                             <input type="email" id="email" name="user_email"
-                                class="form-control"
-                                placeholder="Enter your email" required>
+                                required placeholder=" ">
+                            <label for="email">Your Email</label>
                         </div>
-
-                        <div class="form-group">
-                            <label for="subject"
-                                class="form-label">Subject</label>
-                            <input type="text" id="subject" name="subject"
-                                class="form-control" placeholder="Enter subject"
-                                required>
+                        <div class="input-group">
+                            <textarea id="message" name="message" required
+                                placeholder=" "></textarea>
+                            <label for="message">Message</label>
                         </div>
-
-                        <div class="form-group">
-                            <label for="message"
-                                class="form-label">Message</label>
-                            <textarea id="message" name="message"
-                                class="form-control"
-                                placeholder="Enter your message"
-                                required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn btn-primary">Send
+                            Message <i class="fas fa-paper-plane"></i></button>
                     </form>
-
-                    <!-- <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Your
-                                Name</label>
-                            <input type="text" id="name" class="form-control"
-                                placeholder="Enter your name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email" class="form-label">Your
-                                Email</label>
-                            <input type="email" id="email" class="form-control"
-                                placeholder="Enter your email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject"
-                                class="form-label">Subject</label>
-                            <input type="text" id="subject" class="form-control"
-                                placeholder="Enter subject" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message"
-                                class="form-label">Message</label>
-                            <textarea id="message" class="form-control"
-                                placeholder="Enter your message"
-                                required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn">Send Message</button>
-                    </form> -->
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer>
-            <div class="container footer-container">
+        <footer class="footer">
+            <div class="container footer-grid">
                 <div class="footer-about">
-                    <a href="#" class="footer-logo">Alaa Ali</a>
-                    <p class="footer-description">Mobile App Developer
-                        specialized in Flutter,
-                        building cross-platform apps with focus on performance
-                        and clean design.</p>
-                    <div class="footer-social">
-                        <a href="https://www.facebook.com/share/17ch424929/"
-                            target="_blank" rel="noopener noreferrer"
-                            class="social-link"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a
-                            href="https://x.com/Alaa_Ali303?t=PNnKQoESKv8YaA2O_5UQrg&s=09"
-                            target="_blank" rel="noopener noreferrer"
-                            class="social-link"><i
-                                class="fab fa-twitter"></i></a>
-                        <a
-                            href="https://www.instagram.com/al3amousa?igsh=M3pvanE4dWt5eGhx"
-                            target="_blank" rel="noopener noreferrer"
-                            class="social-link"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="http://www.linkedin.com/in/alaa-ali-8a7348228"
-                            class="social-link"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/alaamousa12" target="_blank"
-                            rel="noopener noreferrer"
-                            class="social-link"><i
-                                class="fab fa-github"></i></a>
-                    </div>
+                    <a href="#home"
+                        class="footer-logo">Alaa<span>.Dev</span></a>
+                    <p>Professional Flutter Developer dedicated to building
+                        high-quality, performant mobile applications for Android
+                        & iOS.</p>
                 </div>
 
                 <div class="footer-links">
-                    <h3 class="footer-title">Quick Links</h3>
+                    <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#home" class="footer-link">Home</a></li>
-                        <li><a href="#about" class="footer-link">About</a></li>
-                        <li><a href="#skills"
-                                class="footer-link">Skills</a></li>
-                        <li><a href="#projects"
-                                class="footer-link">Projects</a></li>
-                        <li><a href="#certificates"
-                                class="footer-link">Certificates</a></li>
-
-                        <li><a href="#contact"
-                                class="footer-link">Contact</a></li>
+                        <li><a href="#about"><i
+                                    class="fas fa-chevron-right"></i> About
+                                Me</a></li>
+                        <li><a href="#projects"><i
+                                    class="fas fa-chevron-right"></i>
+                                Projects</a></li>
+                        <li><a href="#skills"><i
+                                    class="fas fa-chevron-right"></i>
+                                Skills</a></li>
+                        <li><a href="#certificates"><i
+                                    class="fas fa-chevron-right"></i>
+                                Certificates</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-newsletter">
-                    <h3 class="footer-title">Stay Connected</h3>
-                    <p>Subscribe to get updates about my latest Flutter
-                        projects, tutorials, and blog posts.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Enter your email"
-                            class="newsletter-input" required>
-                        <button type="submit" class="btn">Subscribe</button>
-                    </form>
+                <div class="footer-contact">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-envelope"></i>
+                        alaamosa3322@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +20 106 488 6318</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Alexandria,
+                        Egypt</p>
+                </div>
+
+                <div class="footer-socials-col">
+                    <h3>Follow Me</h3>
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/alaa-ali-8a7348228"
+                            target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/alaamousa12" target="_blank"
+                            rel="noopener noreferrer"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.facebook.com/share/17ch424929/"
+                            target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a
+                            href="https://www.instagram.com/al3amousa?igsh=M3pvanE4dWt5eGhx"
+                            target="_blank" rel="noopener noreferrer"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
 
@@ -759,20 +1044,11 @@
                 <p>&copy; <span id="year"></span> Alaa Ali. All Rights
                     Reserved.</p>
             </div>
-
-            <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-</script>
         </footer>
 
         <script
             src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/components/navigation.js"></script>
-        <script src="js/components/animations.js"></script>
-        <script src="js/components/project-filter.js"></script>
-        <script src="js/components/form-validation.js"></script>
+        <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
     </body>
 </html>

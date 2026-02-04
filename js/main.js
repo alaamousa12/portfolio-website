@@ -1,160 +1,200 @@
-// Animate skills progress bars when in view
-function animateSkills() {
-  const skillsSection = document.querySelector("#skills");
-  const skills = document.querySelectorAll(".skill-progress");
-  if (!skillsSection) return;
+document.addEventListener("DOMContentLoaded", function () {
+  // --- Navigation & Menu ---
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("nav-menu");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const header = document.getElementById("header");
 
-  const sectionTop = skillsSection.getBoundingClientRect().top;
-  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    hamburger.querySelector("i").classList.toggle("fa-times");
+  });
 
-  if (sectionTop <= windowHeight - 100) {
-    // لو العنصر في الشاشة، نملأ الـ width
-    skills.forEach((skill) => {
-      const value = skill.getAttribute("data-width").trim();
-      skill.style.width = value;
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+      hamburger.querySelector("i").classList.remove("fa-times");
     });
-  } else {
-    // لو العنصر خارج الشاشة، نرجع الـ width صفر
-    skills.forEach((skill) => {
-      skill.style.width = "0";
-    });
+  });
+
+  // Sticky Header
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50)
+      header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+    else header.style.boxShadow = "none";
+  });
+
+  // --- Dark Mode ---
+  const themeBtn = document.getElementById("dark-mode-btn");
+  const themeIcon = themeBtn.querySelector("i");
+
+  // Check saved theme
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    themeIcon.classList.replace("fa-moon", "fa-sun");
   }
-}
 
-
-// Simple scroll animations for sections
-const scrollElements = document.querySelectorAll(
-  ".section, .hero, .project-card"
-);
-
-const elementInView = (el, offset = 0) => {
-  const elementTop = el.getBoundingClientRect().top;
-  return (
-    elementTop <=
-    (window.innerHeight || document.documentElement.clientHeight) - offset
-  );
-};
-
-const displayScrollElement = (element) => {
-  element.classList.add("scrolled");
-};
-
-const hideScrollElement = (element) => {
-  element.classList.remove("scrolled");
-};
-
-const handleScrollAnimation = () => {
-  scrollElements.forEach((el) => {
-    if (elementInView(el, 100)) {
-      displayScrollElement(el);
+  themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    if (document.body.classList.contains("dark-mode")) {
+      themeIcon.classList.replace("fa-moon", "fa-sun");
+      localStorage.setItem("theme", "dark");
     } else {
-      hideScrollElement(el);
+      themeIcon.classList.replace("fa-sun", "fa-moon");
+      localStorage.setItem("theme", "light");
     }
   });
-};
 
-// Animate About Section separately
-const aboutContent = document.querySelector(".about-content");
-const aboutImage = document.querySelector(".about-image");
-const aboutText = document.querySelector(".about-text");
+  // --- Typing Effect ---
+  const typingText = document.querySelector(".typing-text");
+  const words = ["Mobile App Developer", "Flutter Enthusiast", "UI/UX Lover"];
+  let wordIndex = 0,
+    charIndex = 0,
+    isDeleting = false;
 
-const animateAbout = () => {
-  const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-  if (aboutContent) {
-    const contentTop = aboutContent.getBoundingClientRect().top;
-    if (contentTop <= windowHeight - 100) {
-      aboutContent.classList.add("scrolled");
+  const type = () => {
+    const currentWord = words[wordIndex];
+    if (isDeleting) {
+      typingText.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
     } else {
-      aboutContent.classList.remove("scrolled");
+      typingText.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
     }
-  }
 
-  if (aboutImage) {
-    const imageTop = aboutImage.getBoundingClientRect().top;
-    if (imageTop <= windowHeight - 100) {
-      aboutImage.classList.add("scrolled");
+    if (!isDeleting && charIndex === currentWord.length) {
+      isDeleting = true;
+      setTimeout(type, 2000);
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(type, 500);
     } else {
-      aboutImage.classList.remove("scrolled");
+      setTimeout(type, isDeleting ? 100 : 200);
     }
-  }
+  };
+  type();
 
-  if (aboutText) {
-    const textTop = aboutText.getBoundingClientRect().top;
-    if (textTop <= windowHeight - 100) {
-      aboutText.classList.add("scrolled");
-    } else {
-      aboutText.classList.remove("scrolled");
-    }
-  }
-};
+  // --- Project Filter ---
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card");
 
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelector(".filter-btn.active").classList.remove("active");
+      btn.classList.add("active");
 
-// Dark Mode للـ Hero, About, Skills, Projects, Contact, Header Sections مع تغيير الأيقونة
-function initDarkAbout() {
-  const darkBtn = document.getElementById('dark-mode-btn');
-  const heroSection = document.getElementById('home');      
-  const aboutSection = document.getElementById('about');
-  const skillsSection = document.getElementById('skills');
-  const projectsSection = document.getElementById('projects');
-  const certificatesSection = document.getElementById('certificates');
-  const contactSection = document.getElementById('contact');
-  const header = document.querySelector('header');          
-  const icon = darkBtn.querySelector('i');
+      const filterValue = btn.getAttribute("data-filter");
 
-  if (darkBtn && heroSection && aboutSection && skillsSection && projectsSection && contactSection && header) {
-    
-    // ✅ عند تحميل الصفحة: خلي الأيقونة دايمًا شمس (الوضع الفاتح)
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
-
-    darkBtn.addEventListener('click', () => {
-      heroSection.classList.toggle('dark-hero');
-      aboutSection.classList.toggle('dark-about');
-      skillsSection.classList.toggle('dark-about'); 
-      projectsSection.classList.toggle('dark-about');
-      certificatesSection.classList.toggle('dark-certificates');
-      contactSection.classList.toggle('dark-about');
-      header.classList.toggle('dark-header');   
-
-      // ✅ عند التبديل غير الأيقونة
-      if (aboutSection.classList.contains('dark-about')) {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-      } else {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-      }
-    });
-  }
-}
-
-function initMain() {
-  handleScrollAnimation(); 
-  animateAbout(); // animate About section on load
-
-  window.addEventListener("scroll", handleScrollAnimation);
-  window.addEventListener("scroll", animateSkills);
-  window.addEventListener("scroll", animateAbout);
-
-  initDarkAbout(); // تفعيل Dark Mode للـ About, Skills, Projects
-
-  // 🎉 Confetti on logo click
-  const logo = document.querySelector(".logo");
-  if (logo) {
-    logo.addEventListener("click", function (e) {
-      e.preventDefault();
-      confetti({
-        particleCount: 150,
-        spread: 100,
-        origin: { y: 0.6 }
+      projectCards.forEach((card) => {
+        if (
+          filterValue === "all" ||
+          card.getAttribute("data-category") === filterValue
+        ) {
+          card.style.display = "block";
+          // Animation reset
+          card.style.animation = "none";
+          card.offsetHeight; /* trigger reflow */
+          card.style.animation = "fadeInUp 0.5s ease forwards";
+        } else {
+          card.style.display = "none";
+        }
       });
     });
+  });
+
+  // --- Scroll Reveal Animation (The Magic) ---
+  const revealElements = document.querySelectorAll(
+    ".reveal-up, .reveal-left, .reveal-right",
+  );
+
+  const revealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+    const elementVisible = 100;
+
+    revealElements.forEach((reveal) => {
+      const elementTop = reveal.getBoundingClientRect().top;
+      if (elementTop < windowHeight - elementVisible) {
+        reveal.classList.add("reveal-active");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", revealOnScroll);
+  // Trigger once on load
+  revealOnScroll();
+
+  // --- Courses Modal Logic (NEW) ---
+  const courseCards = document.querySelectorAll(".course-card");
+  const courseModals = document.querySelectorAll(".course-modal");
+  const modalCloseBtns = document.querySelectorAll(".modal-close-btn");
+
+  // دالة لفتح المودال
+  const openModal = (modalId) => {
+    const modal = document.querySelector(modalId);
+    if (modal) {
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden"; // منع السكرول في الصفحة الخلفية
+    }
+  };
+
+  // دالة لغلق المودال
+  const closeModal = (modal) => {
+    modal.classList.remove("active");
+    document.body.style.overflow = "auto"; // إرجاع السكرول
+  };
+
+  // إضافة حدث الضغط على الكروت
+  courseCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const targetModalId = card.getAttribute("data-course-target");
+      openModal(targetModalId);
+    });
+  });
+
+  // إضافة حدث الضغط على زر الإغلاق (X)
+  modalCloseBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const modal = btn.closest(".course-modal");
+      closeModal(modal);
+    });
+  });
+
+  // إغلاق المودال عند الضغط على الخلفية السوداء
+  courseModals.forEach((modal) => {
+    modal.querySelector(".modal-overlay").addEventListener("click", () => {
+      closeModal(modal);
+    });
+  });
+
+  const contactForm = document.getElementById("contact-form");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const btn = contactForm.querySelector("button");
+      const originalText = btn.innerHTML;
+
+      // تغيير شكل الزرار أثناء التحميل
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      btn.disabled = true;
+
+      // استبدل service_id و template_id باللي عندك في EmailJS
+      // emailjs.sendForm('service_id', 'template_id', this)
+
+      // محاكاة للإرسال (عشان تجرب الشكل)
+      setTimeout(() => {
+        btn.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
+        btn.style.background = "#10b981"; // لون أخضر
+        contactForm.reset();
+
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.style.background = ""; // رجع اللون الأصلي
+          btn.disabled = false;
+        }, 3000);
+      }, 1500);
+    });
   }
-}
-
-
-// Initialize on page load
-window.addEventListener("DOMContentLoaded", () => {
-  initMain();
 });

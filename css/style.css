@@ -1054,6 +1054,344 @@ body.dark-mode .meta-badge {
   color: var(--primary-color);
 }
 
+/* ================= EXPERIENCE SECTION ================= */
+.experience-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.job-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+/* خط جانبي أزرق مميز */
+.job-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: var(--primary-color);
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Header --- */
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.job-role-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.company-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+.company-info i {
+  color: var(--primary-color);
+  width: 20px;
+}
+
+.date-badge {
+  background: rgba(58, 134, 255, 0.1);
+  color: var(--primary-color);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+/* --- Body --- */
+.job-desc {
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Technical Tags */
+.job-skills-section,
+.job-soft-section {
+  margin-bottom: 1.5rem;
+}
+
+.job-skills-section h4,
+.job-soft-section h4 {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.job-skills-section h4 i,
+.job-soft-section h4 i {
+  color: var(--primary-color);
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-tags span {
+  background: var(--bg-color);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.tech-tags span i {
+  color: var(--primary-color);
+}
+
+.tech-tags span:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.tech-tags span:hover i {
+  color: white;
+}
+
+/* Soft Skills List */
+.soft-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.soft-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.soft-list li i {
+  color: #10b981; /* لون أخضر */
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .job-header {
+    flex-direction: column;
+  }
+  .job-date {
+    order: -1;
+    margin-bottom: 10px;
+  }
+  .job-card {
+    padding: 1.5rem;
+  }
+}
+
+/* ================= EDUCATION SECTION ================= */
+.education-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.edu-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* خط جانبي بلون مختلف للتعليم (مثلاً أزرق غامق أو نفس الرئيسي) */
+.edu-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: var(--primary-color);
+}
+
+.edu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Header --- */
+.edu-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+}
+
+.edu-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(58, 134, 255, 0.1);
+  color: var(--primary-color);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
+.edu-info {
+  flex: 1;
+}
+
+.edu-info h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.uni-name {
+  font-size: 1rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.edu-date span {
+  background: var(--bg-color);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-color);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* --- Body --- */
+.edu-status {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edu-status i {
+  color: var(--primary-color);
+}
+
+/* Achievement Box (مربع التقدير) */
+.edu-achievement {
+  background: linear-gradient(to right, rgba(58, 134, 255, 0.05), transparent);
+  border: 1px solid rgba(58, 134, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.trophy-icon {
+  font-size: 2rem;
+  color: #ffca28; /* لون ذهبي للكأس */
+  background: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* في الدارك مود نغير خلفية أيقونة الكأس */
+body.dark-mode .trophy-icon {
+  background: #1e293b;
+}
+
+.edu-achievement h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.edu-achievement p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.edu-achievement strong {
+  color: var(--primary-color);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .edu-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .edu-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  .edu-date {
+    align-self: flex-start;
+  }
+  .edu-achievement {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
 /* ================= FOOTER (تم التعديل بالكامل) ================= */
 /* ================= FOOTER ================= */
 footer {

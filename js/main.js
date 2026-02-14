@@ -166,35 +166,4 @@ document.addEventListener("DOMContentLoaded", function () {
       closeModal(modal);
     });
   });
-
-  const contactForm = document.getElementById("contact-form");
-
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const btn = contactForm.querySelector("button");
-      const originalText = btn.innerHTML;
-
-      // تغيير شكل الزرار أثناء التحميل
-      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-      btn.disabled = true;
-
-      // استبدل service_id و template_id باللي عندك في EmailJS
-      // emailjs.sendForm('service_id', 'template_id', this)
-
-      // محاكاة للإرسال (عشان تجرب الشكل)
-      setTimeout(() => {
-        btn.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
-        btn.style.background = "#10b981"; // لون أخضر
-        contactForm.reset();
-
-        setTimeout(() => {
-          btn.innerHTML = originalText;
-          btn.style.background = ""; // رجع اللون الأصلي
-          btn.disabled = false;
-        }, 3000);
-      }, 1500);
-    });
-  }
 });
